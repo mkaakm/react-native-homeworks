@@ -22,11 +22,11 @@ export default function Tabs() {
                     tabBarIcon:({focused,size,color})=>{
                         let iconName;
                         if (route.name === 'Home'){
-                            iconName='home';
+                            iconName='home' ;
                             size=focused? 25:20;
-                            color=focused? 'red':'#000';
+                            color=focused? 'red':'#000' ;
                         }else if (route.name === 'All books'){
-                            iconName='book';
+                            iconName='book' ;
                             size=focused? 25:20;
                             color=focused? 'red':'#000'
                         }else if (route.name === 'List Of Books'){
