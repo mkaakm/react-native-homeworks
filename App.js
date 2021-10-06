@@ -1,7 +1,7 @@
-import React, {useState} from 'react';
-import { StyleSheet, View } from 'react-native';
+import React, {useState} from 'react' ;
+import { StyleSheet, View } from 'react-native' ;
 
-import { StatusBar } from 'expo-status-bar';
+import { StatusBar } from 'expo-status-bar' ;
 
 import Start from "./src/components/start/start";
 import Login from "./src/components/Login/Login";
