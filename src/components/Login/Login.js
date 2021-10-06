@@ -19,14 +19,14 @@ export default function Login({goBack}) {
         <View style={styles.containerLogin}>
             <ButtonBack text='Back' onPress={goBack}/>
             <View>
-               <Text style={styles.textHeader}>Login</Text>
+                <Text style={styles.textHeader}>Login</Text>
                 <View style={styles.inputIconContainer}>
                     <MaterialCommunityIcons name="email" style={styles.inputIcon}/>
                     <Input placeholder='Email' placeholderTextColor='#fff' required/>
                 </View>
                 <View style={styles.inputIconContainer}>
                     <Feather name="lock" style={styles.inputIcon}/>
-                <SecureInput placeholder='Password' placeholderTextColor='#fff' required/>
+                    <SecureInput placeholder='Password' placeholderTextColor='#fff' required/>
                 </View>
                 <Button style={styles.loginButton} text='Login'/>
                 <Text style={styles.textLink}>Forget your password?</Text>
