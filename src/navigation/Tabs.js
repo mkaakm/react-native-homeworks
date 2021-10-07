@@ -13,8 +13,8 @@ import FontAwesome5 from 'react-native-vector-icons/FontAwesome5'
 
 const Tab = createBottomTabNavigator();
 
+import {iconConfigs} from "./iconsConfigs";
 export default function Tabs() {
-
     return (
         <NavigationContainer>
             <Tab.Navigator
@@ -23,26 +23,9 @@ export default function Tabs() {
                     headerTintColor: 'red',
                     headerTitleAlign: 'center',
                     tabBarIcon: ({focused, size, color}) => {
-                        let iconName;
-                        if (route.name === 'Home') {
-                            iconName = 'home';
-                            size = focused ? 25 : 20;
-                            color = focused ? 'red' : '#fff';
-                        } else if (route.name === 'All books') {
-                            iconName = 'book';
-                            size = focused ? 25 : 20;
-                            color = focused ? 'red' : '#fff'
-                        } else if (route.name === 'List Of Books') {
-                            iconName = 'bookmark';
-                            size = focused ? 25 : 20;
-                            color = focused ? 'red' : '#fff'
-                        } else if (route.name === 'Book Shop') {
-                            iconName = 'shopping-basket';
-                            size = focused ? 25 : 20;
-                            color = focused ? 'red' : '#fff'
-                        }
+                        const props = iconConfigs.getConfig(route.name, focused)
                         return (
-                            <FontAwesome5 name={iconName} size={size} color={color}/>
+                            <FontAwesome5 name={props.iconName} size={props.size} color={props.color}/>
                         )
                     },
                     tabBarStyle: {
