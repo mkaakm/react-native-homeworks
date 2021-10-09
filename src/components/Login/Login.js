@@ -37,9 +37,6 @@ export default function Login({goBack}) {
 }
 
 const styles = StyleSheet.create({
-    container:{
-        flex:1,
-    },
     containerLogin: {
         backgroundColor: '#000',
         justifyContent: 'center',
@@ -76,6 +73,5 @@ const styles = StyleSheet.create({
     },
     inputIconContainer: {
         color:'#fff',
-
     },
 });
