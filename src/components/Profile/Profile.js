@@ -18,9 +18,9 @@ export default function Profile (){
                         </Image>
                     <Text style={styles.avatarText}>Anna Lihtman</Text>
                 </View>
+                <UserActivity/>
+                <UserInfo/>
             </ScrollView>
-            <UserActivity/>
-            <UserInfo/>
         </View>
     )
 }

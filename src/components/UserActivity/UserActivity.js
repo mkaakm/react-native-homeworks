@@ -29,7 +29,6 @@ const Item = ({ title, count }) => (
 export default function  UserActivity () {
     const renderItem = ({ item }) => (
         <Item title={item.title} count={item.count} />
-
     );
 
     return (
@@ -63,7 +62,8 @@ const styles = StyleSheet.create({
         marginBottom: 25,
         width: '30%',
         justifyContent:'center',
-        padding: 5
+        padding: 5,
+        borderRadius: 10
     },
     title: {
         textAlign: 'center',
