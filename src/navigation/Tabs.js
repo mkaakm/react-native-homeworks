@@ -18,14 +18,15 @@ export default function Tabs() {
     return (
         <NavigationContainer>
             <Tab.Navigator
+                tabBarOptions={{ showLabel: false }}
                 screenOptions={({route}) => ({
                     headerStyle: {backgroundColor: '#000'},
                     headerTintColor: 'red',
                     headerTitleAlign: 'center',
-                    tabBarIcon: ({focused, size, color}) => {
-                        const props = iconConfigs.getConfig(route.name, focused)
+                    tabBarIcon: ({focused}) => {
+                        const {iconName, size, color} = iconConfigs.getConfig(route.name, focused)
                         return (
-                            <FontAwesome5 name={props.iconName} size={props.size} color={props.color}/>
+                            <FontAwesome5 name={iconName} size={size} color={color}/>
                         )
                     },
                     tabBarStyle: {
@@ -35,10 +36,10 @@ export default function Tabs() {
                 })
                 }
             >
-                <Tab.Screen name="Home" component={Home} options={{tabBarLabel: () => null}} />
-                <Tab.Screen name="All books" component={AllBooks} options={{tabBarBadge: 3, tabBarLabel: () => null}}/>
-                <Tab.Screen name="List Of Books" component={ListOfBooksCurrently} options={{tabBarLabel: () => null}}/>
-                <Tab.Screen name="Book Shop" component={BookShop} options={{tabBarLabel: () => null}}/>
+                <Tab.Screen name="Home" component={Home}/>
+                <Tab.Screen name="All books" component={AllBooks} options={{tabBarBadge: 3}}/>
+                <Tab.Screen name="List Of Books" component={ListOfBooksCurrently}/>
+                <Tab.Screen name="Book Shop" component={BookShop}/>
             </Tab.Navigator>
         </NavigationContainer>
     );
