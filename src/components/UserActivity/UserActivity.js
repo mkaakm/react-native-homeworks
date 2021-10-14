@@ -1,23 +1,6 @@
 import React from 'react';
-import { SafeAreaView, View, FlatList, StyleSheet, Text } from 'react-native';
 
-const DATA = [
-    {
-        id: 'bd7acbea-c1b1-46c2-aed5-3ad53abb28ba',
-        title: 'Books Read',
-        count: 3
-    },
-    {
-        id: '3ac68afc-c605-48d3-a4f8-fbd91aa97f63',
-        title: 'Pages Read',
-        count: 800
-    },
-    {
-        id: '58694a0f-3da1-471f-bd96-145571e29d72',
-        title: 'Worth read',
-        count: 3
-    },
-];
+import {SafeAreaView, View, FlatList, StyleSheet, Text} from 'react-native';
 
 const Item = ({ title, count }) => (
     <View style={styles.item}>
@@ -26,19 +9,19 @@ const Item = ({ title, count }) => (
     </View>
 );
 
-export default function  UserActivity () {
-    const renderItem = ({ item }) => (
-        <Item title={item.title} count={item.count} />
-    );
+export default function  UserActivity ({activity}) {
 
+    const renderItem = ( {item} ) => {
+        return  <Item title={item.title} count={item.description}/>
+    }
     return (
         <SafeAreaView style={styles.container}>
-            <FlatList
-                data={DATA}
+            {activity?.items && <FlatList
+                data={activity.items}
                 renderItem={renderItem}
-                keyExtractor={item => item.id}
+                keyExtractor={item => item.itemId}
                 numColumns={3}
-            />
+            />}
         </SafeAreaView>
     );
 }
@@ -74,6 +57,9 @@ const styles = StyleSheet.create({
         color:'#fff',
         fontSize: 14,
         textAlign:'center',
+    },
+    image:{
+        width: 40,
+        height: 40
     }
 });
-
