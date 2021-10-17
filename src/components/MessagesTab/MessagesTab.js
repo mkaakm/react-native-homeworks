@@ -70,33 +70,33 @@ export default function MessagesTab() {
   console.log(headerY)
   return (
     <SafeAreaView style={styles.container}>
-      <View style={styles.headerContainer}>
-        <Animated.View
-          style={{
-            position: "absolute",
-            left: 0,
-            right: 0,
-            top: 0,
-            height: HEADER_HEIGHT,
-            backgroundColor: "grey",
-            zIndex: 1000,
-            elevation: 1000,
-            transform: [{ translateY: headerY }],
-          }}
-        >
-          <Text style={styles.messages}>Messages</Text>
-        </Animated.View>
-      </View>
-      <Button style={styles.ScrollToStart} text="ScrollToStart" onPress={onPressScrollToStart}/>
-      <Animated.ScrollView
-          bounces={false}
-          scrollEventThrottle={16}
-          style={{ paddingTop: HEADER_HEIGHT }}
-          onScroll={Animated.event([
-            {
-              nativeEvent: { contentOffset: { y: scrollY } },
-            },
-          ])}
+      {/*<View style={styles.headerContainer}>*/}
+      {/*  <Animated.View*/}
+      {/*    style={{*/}
+      {/*      position: "absolute",*/}
+      {/*      left: 0,*/}
+      {/*      right: 0,*/}
+      {/*      top: 0,*/}
+      {/*      height: HEADER_HEIGHT,*/}
+      {/*      backgroundColor: "grey",*/}
+      {/*      zIndex: 1000,*/}
+      {/*      elevation: 1000,*/}
+      {/*      transform: [{ translateY: headerY }],*/}
+      {/*    }}*/}
+      {/*  >*/}
+      {/*    <Text style={styles.messages}>Messages</Text>*/}
+      {/*  </Animated.View>*/}
+      {/*</View>*/}
+      {/*<Button style={styles.ScrollToStart} text="ScrollToStart" onPress={onPressScrollToStart}/>*/}
+      {/*<Animated.ScrollView*/}
+      {/*    bounces={false}*/}
+      {/*    scrollEventThrottle={16}*/}
+      {/*    style={{ paddingTop: HEADER_HEIGHT }}*/}
+      {/*    onScroll={Animated.event([*/}
+      {/*      {*/}
+      {/*        nativeEvent: { contentOffset: { y: scrollY } },*/}
+      {/*      },*/}
+      {/*    ])}*/}
       >
         <FlatList
             data={users}
@@ -104,8 +104,7 @@ export default function MessagesTab() {
             keyExtractor={(item) => item.id}
             ref={ref}
         />
-      </Animated.ScrollView>
-
+      {/*</Animated.ScrollView>*/}
 
     </SafeAreaView>
   );
