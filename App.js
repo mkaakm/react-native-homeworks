@@ -4,6 +4,7 @@ import {StyleSheet} from 'react-native';
 import Tabs from "./src/navigation/Tabs";
 import Profile from "./src/components/Profile/Profile";
 import {ApolloClient, ApolloProvider, InMemoryCache} from "@apollo/client";
+import MessagesTab from "./src/components/MessagesTab/MessagesTab";
 
 
 export default function App() {
@@ -14,7 +15,8 @@ export default function App() {
   return (
       <ApolloProvider client={client}>
         {/*<Tabs/>*/}
-        <Profile/>
+        {/*<Profile/>*/}
+        <MessagesTab/>
       </ApolloProvider>
   );
 }
