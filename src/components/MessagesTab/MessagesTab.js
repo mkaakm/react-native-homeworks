@@ -37,17 +37,17 @@ const getUsers = async (
   callback(parsedUser.results);
 };
 const headerHeightConfig = {
-  ios:115,
-  android:70 + StatusBar.currentHeight,
-  web: 70
-}
+  ios: 115,
+  android: 70 + StatusBar.currentHeight,
+  web: 70,
+};
 export default function MessagesTab() {
   const HEADER_HEIGHT = headerHeightConfig[Platform.OS];
   const [users, setUsers] = useState([]);
   const ref = useRef(null);
   const scrollY = new Animated.Value(0);
   const diffClampScrollY = Animated.diffClamp(scrollY, 0, HEADER_HEIGHT);
-
+  console.log(scrollY.value)
   const headerY = Animated.interpolateNode(diffClampScrollY, {
     inputRange: [0, HEADER_HEIGHT],
     outputRange: [0, -HEADER_HEIGHT],
@@ -59,60 +59,70 @@ export default function MessagesTab() {
 
   const renderItem = ({ item }) => {
     return (
-      <View style={styles.container}>
+      <View style={styles.messageContainer}>
         <Image style={styles.image} source={{ uri: item.picture.medium }} />
         <Text style={styles.text}>{item.name.first}</Text>
       </View>
     );
   };
 
-  const onPressScrollToStart = () => {};
-  console.log(headerY)
+  // const onPressScrollToStart = () => {};
   return (
     <SafeAreaView style={styles.container}>
-      {/*<View style={styles.headerContainer}>*/}
-      {/*  <Animated.View*/}
-      {/*    style={{*/}
-      {/*      position: "absolute",*/}
-      {/*      left: 0,*/}
-      {/*      right: 0,*/}
-      {/*      top: 0,*/}
-      {/*      height: HEADER_HEIGHT,*/}
-      {/*      backgroundColor: "grey",*/}
-      {/*      zIndex: 1000,*/}
-      {/*      elevation: 1000,*/}
-      {/*      transform: [{ translateY: headerY }],*/}
-      {/*    }}*/}
-      {/*  >*/}
-      {/*    <Text style={styles.messages}>Messages</Text>*/}
-      {/*  </Animated.View>*/}
-      {/*</View>*/}
-      {/*<Button style={styles.ScrollToStart} text="ScrollToStart" onPress={onPressScrollToStart}/>*/}
-      {/*<Animated.ScrollView*/}
-      {/*    bounces={false}*/}
-      {/*    scrollEventThrottle={16}*/}
-      {/*    style={{ paddingTop: HEADER_HEIGHT }}*/}
-      {/*    onScroll={Animated.event([*/}
-      {/*      {*/}
-      {/*        nativeEvent: { contentOffset: { y: scrollY } },*/}
-      {/*      },*/}
-      {/*    ])}*/}
+      <View style={styles.headerContainer}>
+        <Animated.View
+          style={{
+            position: "absolute",
+            left: 0,
+            right: 0,
+            top: 0,
+            height: HEADER_HEIGHT,
+            backgroundColor: "grey",
+            zIndex: 1000,
+            elevation: 1000,
+            transform: [{ translateY: headerY }],
+          }}
+        >
+          <Text style={styles.messages}>Messages</Text>
+        </Animated.View>
+      </View>
+      {/*<Button*/}
+      {/*  style={styles.ScrollToStart}*/}
+      {/*  text="ScrollToStart"*/}
+      {/*  onPress={onPressScrollToStart}*/}
+      {/*/>*/}
+      <Animated.ScrollView
+        bounces={false}
+        scrollEventThrottle={16}
+        style={{ paddingTop: HEADER_HEIGHT }}
+        onScroll={Animated.event([
+          {
+            nativeEvent: { contentOffset: { y: scrollY } },
+          },
+        ])}
       >
         <FlatList
-            data={users}
-            renderItem={renderItem}
-            keyExtractor={(item) => item.id}
-            ref={ref}
+          data={users}
+          renderItem={renderItem}
+          keyExtractor={(item) => item.id}
+          ref={ref}
         />
-      {/*</Animated.ScrollView>*/}
-
+      </Animated.ScrollView>
     </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
   headerContainer: {
-    flex: 1,
+  },
+  messageContainer:{
+    display:"flex",
+    flexDirection:"row",
+    alignItems: 'center',
+    marginBottom: 20,
+    marginTop:20,
+    borderBottomWidth: 1,
+    borderColor: "red",
   },
   container: {
     width: "100%",
@@ -124,14 +134,14 @@ const styles = StyleSheet.create({
     width: 40,
     height: 40,
     borderRadius: 20,
-    marginTop: 20,
     marginLeft: 30,
   },
-    messages:{
-      fontSize:20,
-        textAlign:"center",
-
-    },
+  messages: {
+    fontSize: 20,
+    textAlign: "center",
+    color: "red",
+    top: 40,
+  },
   text: {
     marginLeft: 65,
     fontSize: 25,
@@ -144,6 +154,5 @@ const styles = StyleSheet.create({
     marginBottom: 30,
     backgroundColor: "red",
     borderColor: "red",
-    top: 20,
   },
 });
