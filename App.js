@@ -3,18 +3,18 @@ import { StyleSheet, View } from 'react-native' ;
 
 import { StatusBar } from 'expo-status-bar' ;
 
-import Start from "./src/components/start/start";
-import Login from "./src/components/Login/Login";
-import SignUp from "./src/components/SignUp/SignUp";
+import Start from "./src/components/Start";
+import Login from "./src/components/Login";
+import SignUp from "./src/components/SignUp";
 
 export default function App() {
-  const [screen, setScreen] = useState('start')
-  const goBack = ()=> setScreen('start')
+  const [view, setView] = useState('start')
+  const goBack = ()=> setView('start')
   return (
       <View style={styles.container}>
-        {screen === 'start' && <Start setScreen={setScreen}/> }
-        {screen === 'login' && <Login goBack={goBack}/>}
-        {screen === 'signUp' && <SignUp goBack={goBack}/>}
+        {view === 'start' && <Start setScreen={setView}/> }
+        {view === 'login' && <Login goBack={goBack}/>}
+        {view === 'signUp' && <SignUp goBack={goBack}/>}
         <StatusBar style="auto" />
       </View>
   );
