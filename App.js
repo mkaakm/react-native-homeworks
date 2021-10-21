@@ -1,16 +1,11 @@
 import React from 'react';
-import {StyleSheet} from 'react-native';
 
 import Tabs from "./src/navigation/Tabs";
 import Profile from "./src/components/Profile/Profile";
-import {ApolloClient, ApolloProvider, InMemoryCache} from "@apollo/client";
+import {ApolloProvider} from "@apollo/client";
 
-
+import client from "./src/graphql/appoloClient";
 export default function App() {
-  const client = new ApolloClient({
-    uri: "http://192.168.0.41:3000/graphql",
-    cache: new InMemoryCache()
-  })
   return (
       <ApolloProvider client={client}>
         {/*<Tabs/>*/}
@@ -19,9 +14,6 @@ export default function App() {
   );
 }
 
-const styles = StyleSheet.create({
-
-});
 
 
 

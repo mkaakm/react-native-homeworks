@@ -11,10 +11,10 @@ import {
   Image,
 } from "react-native";
 
-import getUser from "../../graphql/queries/getUser";
 import UserInfo from "../UserInfo/UserInfo";
 import UserActivity from "../UserActivity/UserActivity";
-import getGallery from "../../graphql/queries/getGallery";
+
+import {getUser, getGallery} from "./queries";
 
 export default function Profile() {
   const { data, error, loading } = useQuery(getUser);
