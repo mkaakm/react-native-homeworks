@@ -1,6 +1,8 @@
 import React from "react";
 import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 
+import {COLORS} from "../../../color";
+
 export default function Button({text, type = 'light', style, onPress}) {
     const className = type === 'light' ? styles.lightButton : styles.darkButton
 
@@ -16,9 +18,9 @@ export default function Button({text, type = 'light', style, onPress}) {
 const styles = StyleSheet.create({
     lightButton: {
         color: "#000",
-        borderColor: '#fff',
+        borderColor: COLORS.primary,
         borderRadius: 25,
-        backgroundColor: '#fff',
+        backgroundColor: COLORS.primary,
         textAlign:'center',
         borderStyle:'solid',
         borderWidth: 1,
@@ -27,10 +29,10 @@ const styles = StyleSheet.create({
         paddingBottom: 10,
     },
     darkButton:{
-        color:'#fff',
-        borderColor: 'red',
+        color:COLORS.primary,
+        borderColor: COLORS.secondary,
         borderRadius: 25,
-        backgroundColor: 'red',
+        backgroundColor: COLORS.secondary,
         textAlign:'center',
         borderStyle:'solid',
         borderWidth: 1,

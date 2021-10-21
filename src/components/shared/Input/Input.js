@@ -1,6 +1,8 @@
 import React, {useState} from "react";
 import {StyleSheet,TextInput, View, Text} from 'react-native';
 
+import {COLORS} from "../../../color";
+
 export default function Input({placeholder, keyboardType, value, placeholderTextColor, required=false}) {
     const [text, setText] = useState(null)
     const endEdit = (e) => setText(e.nativeEvent.text)
@@ -24,8 +26,8 @@ const styles = StyleSheet.create({
     input:{
         height: 40,
         padding: 10,
-        color: "#fff",
-        borderColor: 'red',
+        color: COLORS.primary,
+        borderColor: COLORS.secondary,
         borderRadius: 25,
         backgroundColor: 'transparent',
         borderStyle:'solid',
@@ -37,7 +39,7 @@ const styles = StyleSheet.create({
         marginLeft: 'auto',
         marginBottom: 25,
         width: '80%',
-        shadowColor:"red",
+        shadowColor:COLORS.secondary,
         shadowOffset:{
             width: 2,
             height: 2
@@ -48,7 +50,7 @@ const styles = StyleSheet.create({
     },
     text:{
         fontSize: 14,
-        color: 'red',
+        color: COLORS.secondary,
         width: '80%',
         marginRight: 'auto',
         marginLeft: 'auto',

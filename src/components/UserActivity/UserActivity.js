@@ -1,6 +1,7 @@
 import React from 'react';
 import { SafeAreaView, View, FlatList, StyleSheet, Text } from 'react-native';
 
+import {COLORS} from "../../color";
 const DATA = [
     {
         id: 'bd7acbea-c1b1-46c2-aed5-3ad53abb28ba',
@@ -53,7 +54,7 @@ const styles = StyleSheet.create({
     item: {
         height: 70,
         color: "#000",
-        borderColor: 'red',
+        borderColor: COLORS.secondary,
         backgroundColor:'#000',
         borderStyle:'solid',
         borderWidth: 1,
@@ -68,10 +69,10 @@ const styles = StyleSheet.create({
     title: {
         textAlign: 'center',
         marginBottom: 5,
-        color:'#fff'
+        color:COLORS.primary
     },
     count:{
-        color:'#fff',
+        color:COLORS.primary,
         fontSize: 14,
         textAlign:'center',
     }

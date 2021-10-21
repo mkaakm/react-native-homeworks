@@ -2,6 +2,7 @@ import React from 'react';
 import { SafeAreaView, View, FlatList, StyleSheet, Text} from 'react-native';
 import {homeLinkIcon, phoneLinkIcon, mailLinkIcon} from './Icons'
 
+import {COLORS} from "../../color";
 const DATA = [
     {
         id: 'bd2acbea-c1b1-46c2-aed5-3ad53abb28ba',
@@ -46,9 +47,9 @@ export default function  UserInfo () {
 const styles = StyleSheet.create({
     item: {
         height: 40,
-        color: "#fff",
+        color: COLORS.primary,
         backgroundColor:'#000',
-        borderColor: 'red',
+        borderColor: COLORS.secondary,
         borderStyle:'solid',
         borderWidth: 1,
         marginRight: 'auto',
@@ -61,7 +62,7 @@ const styles = StyleSheet.create({
     title: {
         paddingLeft: 40,
         marginTop:-20,
-        color:'#fff'
+        color:COLORS.primary
     },
     icon:{
         paddingLeft:10,

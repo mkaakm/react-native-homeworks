@@ -10,7 +10,7 @@ import SecureInput from "../shared/SecureInput/SecureInput";
 import {Feather} from '@expo/vector-icons';
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
 
-
+import {COLORS} from "../../color";
 export default function SignUp({goBack}) {
     const [isSelected, setSelection] = useState(false);
 
@@ -54,13 +54,13 @@ const styles = StyleSheet.create({
         height: '100%'
     },
     textHeader: {
-        color: 'red',
+        color: COLORS.secondary,
         fontSize: 40,
         textAlign: 'center',
         marginBottom: 25,
     },
     inputIcon: {
-        backgroundColor: 'red',
+        backgroundColor: COLORS.secondary,
         position: 'absolute',
         fontSize: 25,
         left: 60,
@@ -68,15 +68,15 @@ const styles = StyleSheet.create({
     },
     inputIconContainer: {
         backgroundColor: 'transparent',
-        color: '#fff',
+        color: COLORS.primary,
     },
     checkbox: {
         marginRight: 20,
-        backgroundColor: '#fff',
+        backgroundColor: COLORS.primary,
 
     },
     checkboxContainer: {
-        color: '#fff',
+        color: COLORS.primary,
         width: "80%",
         marginLeft: 'auto',
         marginRight: 'auto',
@@ -87,7 +87,7 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
     },
     textLink: {
-        color: 'red',
+        color: COLORS.secondary,
         fontSize: 14,
     },
     signUpButton: {

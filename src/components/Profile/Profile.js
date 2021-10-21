@@ -3,6 +3,8 @@ import {View, StyleSheet, Text, ScrollView, TouchableOpacity, ImageBackground, I
 
 import UserActivity from "../UserActivity/UserActivity";
 import UserInfo from "../UserInfo/UserInfo";
+
+import {COLORS} from "../../color";
 export default function Profile (){
     return (
         <View style={styles.container}>
@@ -52,7 +54,7 @@ const styles = StyleSheet.create({
         fontSize:25,
         fontWeight: 'bold',
         padding: 10,
-        color:'#fff'
+        color:COLORS.primary
     }
 
 })

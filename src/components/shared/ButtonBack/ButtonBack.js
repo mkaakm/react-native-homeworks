@@ -1,6 +1,8 @@
 import React from "react";
 import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 
+import {COLORS} from "../../../color";
+
 export default function Button({text, style, onPress}) {
 
     return (
@@ -14,10 +16,10 @@ export default function Button({text, style, onPress}) {
 
 const styles = StyleSheet.create({
     backButton: {
-        color: "red",
-        borderColor: 'red',
+        color: COLORS.secondary,
+        borderColor: COLORS.secondary,
         borderRadius: 15,
-        backgroundColor: 'red',
+        backgroundColor: COLORS.secondary,
         textAlign:'center',
         borderStyle:'solid',
         borderWidth: 1,

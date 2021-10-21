@@ -13,6 +13,7 @@ import SecureInput from "../shared/SecureInput/SecureInput";
 import { Feather } from '@expo/vector-icons';
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
 
+import {COLORS} from "../../color";
 export default function Login({goBack}) {
 
     return (
@@ -43,18 +44,18 @@ const styles = StyleSheet.create({
         height: '100%'
     },
     textHeader: {
-        color: 'red',
+        color: COLORS.secondary,
         fontSize: 40,
         textAlign: 'center',
         marginBottom: 25,
     },
     text: {
-        color: '#fff',
+        color: COLORS.primary,
         fontSize: 14,
         textAlign: 'center',
     },
     textLink: {
-        color: 'red',
+        color: COLORS.secondary,
         fontSize: 14,
         textAlign: 'center',
     },
@@ -65,13 +66,13 @@ const styles = StyleSheet.create({
         marginBottom: 30,
     },
     inputIcon: {
-        backgroundColor: 'red',
+        backgroundColor: COLORS.secondary,
         position: 'absolute',
         fontSize: 25,
         left: 60,
         top: 7
     },
     inputIconContainer: {
-        color:'#fff',
+        color:COLORS.primary,
     },
 });

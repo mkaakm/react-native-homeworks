@@ -3,6 +3,8 @@ import {StyleSheet, Text, TextInput, View} from 'react-native';
 
 import {Feather} from "@expo/vector-icons";
 
+import {COLORS} from "../../../color";
+
 export default function SecureInput({placeholder, keyboardType, value, placeholderTextColor, required=false}) {
     const [secure, setSecure] = useState(true)
     const [text, setText] = useState(null)
@@ -37,7 +39,7 @@ const styles = StyleSheet.create({
         position: 'relative'
     },
     icon:{
-        color:'red',
+        color:COLORS.secondary,
         position: 'absolute',
         right: '15%',
         top: 7,
@@ -46,8 +48,8 @@ const styles = StyleSheet.create({
     input:{
         height: 40,
         padding: 10,
-        color: "#fff",
-        borderColor: 'red',
+        color: COLORS.primary,
+        borderColor: COLORS.secondary,
         borderRadius: 25,
         backgroundColor: 'transparent',
         borderStyle:'solid',
@@ -59,7 +61,7 @@ const styles = StyleSheet.create({
         marginLeft: 'auto',
         marginBottom: 25,
         width: '80%',
-        shadowColor:"red",
+        shadowColor:COLORS.secondary,
         shadowOffset:{
             width: 2,
             height: 2
@@ -70,7 +72,7 @@ const styles = StyleSheet.create({
     },
     text:{
         fontSize: 14,
-        color: 'red',
+        color: COLORS.secondary,
         width: '80%',
         marginRight: 'auto',
         marginLeft: 'auto',
