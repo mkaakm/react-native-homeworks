@@ -37,9 +37,9 @@ export default function Tabs() {
                 }
             >
                 <Tab.Screen name="Home" component={Home}/>
-                <Tab.Screen name="All books" component={AllBooks} options={{tabBarBadge: 3}}/>
-                <Tab.Screen name="List Of Books" component={ListOfBooksCurrently}/>
-                <Tab.Screen name="Book Shop" component={BookShop}/>
+                <Tab.Screen name="AllBooks" component={AllBooks} options={{tabBarBadge: 3}}/>
+                <Tab.Screen name="ListOfBooks" component={ListOfBooksCurrently}/>
+                <Tab.Screen name="BookShop" component={BookShop}/>
             </Tab.Navigator>
         </NavigationContainer>
     );

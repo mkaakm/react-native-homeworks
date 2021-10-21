@@ -2,13 +2,13 @@ export const iconConfigs = {
     'Home':{
         iconName: 'home',
     },
-    'All books':{
+    'Allbooks':{
         iconName: 'book',
     },
-    'List Of Books':{
+    'ListOfBooks':{
         iconName: 'bookmark',
     },
-    'Book Shop':{
+    'BookShop':{
         iconName: 'shopping-basket',
     },
     size: 20,
