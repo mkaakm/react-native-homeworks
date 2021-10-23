@@ -2,30 +2,10 @@ import React from "react";
 
 import {Text, View, StyleSheet, FlatList, SafeAreaView} from 'react-native';
 import Button from "../components/shared/Button/Button";
-import {useDispatch} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 
-import {addToCart} from "../store/cart/cart-slice";
-import CartButton from "../components/CartButton";
-const books = [
-    {
-        id: '1',
-        name: 'Тьма, что приходит прежде',
-        author: 'Скотт Беккер',
-        price: 200
-    },
-    {
-        id: '2',
-        name: 'Воин кровавых времен',
-        author: 'Скотт Беккер',
-        price: 300
-    },
-    {
-        id: '3',
-        name: 'Нечистивый консульт',
-        author: 'Скотт Беккер',
-        price: 400
-    }
-]
+import { removeFromCart} from "../store/cart/cart-slice";
+import {getCart} from '../store/cart/cart-selectors'
 
 const renderItem = ({ item }) => {
     return (
@@ -33,17 +13,19 @@ const renderItem = ({ item }) => {
             <Text style={styles.text}>{item.name}</Text>
             <Text style={styles.textAuthor}>{item.author}</Text>
             <Text style={styles.textPrice}>{item.price} UAH</Text>
-            <Button text='buy' type='dark' onPress={item.onPress}/>
+            <Button text='remove' type='dark' onPress={item.onPress}/>
         </View>
     );
 };
 
 export default function AllBooks() {
+    const books = useSelector(getCart)
     const dispatch = useDispatch()
-    const addBook = (book) => {
-        dispatch(addToCart(book))
+    const removeBook = (book) => {
+        dispatch(removeFromCart(book))
     }
-    const items = books.map(item => ({...item, onPress: () => addBook(item)}))
+    const items = books.map(item => ({...item, onPress: () => removeBook(item.id)}))
+    const total = books.reduce((acum, item)=> acum+item.price, 0)
     return (
         <SafeAreaView style={styles.container}>
             <View>
@@ -52,7 +34,7 @@ export default function AllBooks() {
                     renderItem={renderItem}
                     keyExtractor={(item) => item.id}
                 />
-                <CartButton/>
+                <Text style={styles.total}>Total:{total}</Text>
             </View>
         </SafeAreaView>
     );
@@ -83,5 +65,9 @@ const styles = StyleSheet.create({
         fontSize: 15,
         color: "#fff",
         paddingBottom:10
+    },
+    total:{
+        fontSize: 15,
+        color: "#fff",
     }
 });

@@ -1,20 +1,27 @@
 import React from 'react';
-import {Text, View, StyleSheet} from 'react-native';
+import {View, StyleSheet, SafeAreaView} from 'react-native';
 
-
-export default function AllBooks() {
+const renderItem = () => {
 
     return (
-        <View style={styles.container}>
-            <Text>All Books Screen</Text>
-        </View>
+            <View style={styles.AllBooks}>
+
+            </View>
+    );
+};
+
+export default function AllBooks() {
+    return (
+        <SafeAreaView style={styles.container}>
+            <View style={styles.container}>
+
+            </View>
+        </SafeAreaView>
     );
 }
 
 const styles = StyleSheet.create({
-    container:{
-        flex: 1,
-        alignItems: 'center',
-        justifyContent: 'center'
+    AllBooks:{
+
     }
 });

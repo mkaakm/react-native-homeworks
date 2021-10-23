@@ -1,5 +1,7 @@
 import React from 'react';
-import {StyleSheet} from 'react-native';
+
+import {store} from "./src/store/store";
+import {Provider} from "react-redux";
 
 import Tabs from "./src/navigation/Tabs";
 import Profile from "./src/components/Profile/Profile";
@@ -14,16 +16,15 @@ export default function App() {
   })
   return (
       <ApolloProvider client={client}>
-        {/*<Tabs/>*/}
-        {/*<Profile/>*/}
-        <MessagesTab/>
+          <Provider store={store}>
+              <Tabs/>
+              {/*<Profile/>*/}
+              {/*<MessagesTab/>*/}
+          </Provider>
       </ApolloProvider>
   );
 }
 
-const styles = StyleSheet.create({
-
-});
 
 
 
