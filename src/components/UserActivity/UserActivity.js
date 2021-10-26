@@ -36,7 +36,7 @@ const styles = StyleSheet.create({
     item: {
         height: 70,
         color: "#000",
-        borderColor: 'red',
+        borderColor: COLORS.secondary,
         backgroundColor:'#000',
         borderStyle:'solid',
         borderWidth: 1,
@@ -51,10 +51,10 @@ const styles = StyleSheet.create({
     title: {
         textAlign: 'center',
         marginBottom: 5,
-        color:'#fff'
+        color:COLORS.primary
     },
     count:{
-        color:'#fff',
+        color:COLORS.primary,
         fontSize: 14,
         textAlign:'center',
     },

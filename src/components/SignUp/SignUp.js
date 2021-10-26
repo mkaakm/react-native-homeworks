@@ -36,18 +36,29 @@ const styles = StyleSheet.create({
         height: '100%'
     },
     textHeader: {
-        color: 'red',
+        color: COLORS.secondary,
         fontSize: 40,
         textAlign: 'center',
         marginBottom: 25,
     },
+    inputIcon: {
+        backgroundColor: COLORS.secondary,
+        position: 'absolute',
+        fontSize: 25,
+        left: 60,
+        top: 7
+    },
+    inputIconContainer: {
+        backgroundColor: 'transparent',
+        color: COLORS.primary,
+    },
     checkbox: {
         marginRight: 20,
-        backgroundColor: '#fff',
+        backgroundColor: COLORS.primary,
 
     },
     checkboxContainer: {
-        color: '#fff',
+        color: COLORS.primary,
         width: "80%",
         marginLeft: 'auto',
         marginRight: 'auto',
@@ -58,7 +69,7 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
     },
     textLink: {
-        color: 'red',
+        color: COLORS.secondary,
         fontSize: 14,
     },
     signUpButton: {

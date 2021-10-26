@@ -5,6 +5,8 @@ import Button from "../shared/Button";
 
 import {AntDesign} from '@expo/vector-icons';
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
+
+import {COLORS} from "../../color";
 export default function Start({setScreen}) {
     return (
         <View style={styles.container}>
@@ -43,20 +45,20 @@ const styles = StyleSheet.create({
     },
     icon: {
         fontSize: 24,
-        color: 'red',
+        color: COLORS.secondary,
         marginRight: 5,
         marginLeft: 5,
     },
     text: {
-        color: '#fff',
+        color: COLORS.primary,
         fontSize: 25,
         marginBottom: 26,
     },
     innerText: {
-        color: 'red',
+        color: COLORS.secondary,
     },
     textMedia: {
-        color: '#fff',
+        color: COLORS.primary,
         fontSize: 16,
         textAlign: 'center',
         marginBottom: 25,

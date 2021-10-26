@@ -2,7 +2,7 @@ import React from 'react';
 import {SafeAreaView, View, FlatList, StyleSheet, Text} from 'react-native';
 import {icons} from './Icons'
 
-
+import {COLORS} from "../../color";
 const Item = ({title, icon}) => (
     <View style={styles.item}>
         <Text style={styles.icon}>{icon}</Text>
@@ -37,10 +37,10 @@ export default function UserInfo({user = {}}) {
 const styles = StyleSheet.create({
     item: {
         height: 40,
-        color: "#fff",
-        backgroundColor: '#000',
-        borderColor: 'red',
-        borderStyle: 'solid',
+        color: COLORS.primary,
+        backgroundColor:'#000',
+        borderColor: COLORS.secondary,
+        borderStyle:'solid',
         borderWidth: 1,
         marginRight: 'auto',
         marginLeft: 'auto',
@@ -51,8 +51,8 @@ const styles = StyleSheet.create({
     },
     title: {
         paddingLeft: 40,
-        marginTop: -20,
-        color: '#fff'
+        marginTop:-20,
+        color:COLORS.primary
     },
     icon: {
         paddingLeft: 10,

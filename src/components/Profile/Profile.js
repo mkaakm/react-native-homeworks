@@ -1,5 +1,5 @@
 import React from "react";
-
+import {View, StyleSheet, Text, ScrollView, TouchableOpacity, ImageBackground, Image} from "react-native";
 import {useQuery } from "@apollo/client";
 import {
   View,
@@ -47,6 +47,28 @@ export default function Profile() {
       </ScrollView>
     </View>
   );
+
+import {COLORS} from "../../color";
+export default function Profile (){
+    return (
+        <View style={styles.container}>
+            <ScrollView>
+                <View style={styles.backgroundImage}>
+                    <TouchableOpacity>
+                        <ImageBackground source={require('../../../assets/Lihtman.png')} style={styles.backgroundImageStyles}>
+                        </ImageBackground>
+                    </TouchableOpacity>
+                </View>
+                <View style={styles.avatarImage}>
+                        <Image source={require('../../../assets/Lihtman.png')} style={styles.avatarImageStyles}>
+                        </Image>
+                    <Text style={styles.avatarText}>Anna Lihtman</Text>
+                </View>
+                <UserActivity/>
+                <UserInfo/>
+            </ScrollView>
+        </View>
+    )
 }
 
 const styles = StyleSheet.create({
@@ -72,12 +94,12 @@ const styles = StyleSheet.create({
     borderRadius: 100,
     marginTop: -70,
   },
-  avatarText: {
-    fontSize: 25,
-    fontWeight: "bold",
-    padding: 10,
-    color: "#fff",
-  },
+    avatarText:{
+        fontSize:25,
+        fontWeight: 'bold',
+        padding: 10,
+        color:COLORS.primary
+    },
   loading:{
     color: "#fff",
   }
