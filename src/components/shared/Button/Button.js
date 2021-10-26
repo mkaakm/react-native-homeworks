@@ -23,8 +23,7 @@ const styles = StyleSheet.create({
         borderStyle:'solid',
         borderWidth: 1,
         width: 100,
-        paddingTop: 10,
-        paddingBottom: 10,
+        paddingVertical:10
     },
     darkButton:{
         color:'#fff',

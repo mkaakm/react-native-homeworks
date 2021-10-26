@@ -1,26 +1,57 @@
 import React, {useState} from "react";
 import {StyleSheet,TextInput, View, Text} from 'react-native';
 
-export default function Input({placeholder, keyboardType, value, placeholderTextColor, required=false}) {
-    const [text, setText] = useState(null)
-    const endEdit = (e) => setText(e.nativeEvent.text)
-    const error = (text === '' && required) ? <Text style={styles.text}>Field is required</Text> : null
-    return (
-        <View>
-            <TextInput
-                style={styles.input}
-                placeholder={placeholder}
-                placeholderTextColor={placeholderTextColor}
-                keyboardType={keyboardType}
-                value={value}
-                onEndEditing={endEdit}
-            />
-            {error}
-        </View>
-    );
+import {icons} from "./icons";
+import {Feather} from '@expo/vector-icons';
+
+export default function Input(props) {
+  const {
+    placeholder,
+    keyboardType,
+    value,
+    placeholderTextColor,
+    required = false,
+    iconName,
+    isSecure = false,
+  } = props;
+  const [secure, setSecure] = useState(true);
+  const [text, setText] = useState(null);
+  const [error, setError] = useState(null);
+  const endEdit = (e) => {
+    setText(e.nativeEvent.text);
+    if (text === "" && required) {
+      setError("Field is required");
+    }
+  };
+  const switchSecure = () => {
+    setSecure((prevState) => !prevState);
+  };
+  return (
+    <View style={styles.inputIconContainer}>
+      {iconName && icons[iconName]}
+      <TextInput
+        style={styles.input}
+        placeholder={placeholder}
+        placeholderTextColor={placeholderTextColor}
+        keyboardType={keyboardType}
+        value={value}
+        onEndEditing={endEdit}
+      />
+      {error && <Text>{error}</Text>}
+      {isSecure && secure ? (
+        <Feather name="eye" style={styles.secureIcon} onPress={switchSecure} />
+      ) : (
+        <Feather name="eye-off" style={styles.secureIcon} onPress={switchSecure} />
+      )}
+    </View>
+  );
 }
 
 const styles = StyleSheet.create({
+    inputIconContainer: {
+        backgroundColor: 'transparent',
+        color: '#fff',
+    },
     input:{
         height: 40,
         padding: 10,
@@ -54,5 +85,12 @@ const styles = StyleSheet.create({
         marginLeft: 'auto',
         position:'relative',
         top: -15
-    }
+    },
+    secureIcon:{
+        color:'red',
+        position: 'absolute',
+        right: '15%',
+        top: 7,
+        fontSize: 25
+    },
 });

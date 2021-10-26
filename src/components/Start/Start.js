@@ -1,7 +1,7 @@
-import React, {useState} from 'react';
+import React from 'react';
 import {StyleSheet, Text, View} from 'react-native';
 
-import Button from "../shared/Button/Button";
+import Button from "../shared/Button";
 
 import {AntDesign} from '@expo/vector-icons';
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";

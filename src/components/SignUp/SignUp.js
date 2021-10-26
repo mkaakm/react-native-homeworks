@@ -1,15 +1,9 @@
 import React, {useState} from 'react';
 import {StyleSheet, Text, View, CheckBox} from 'react-native';
 
-import Button from "../shared/Button/Button";
-import Input from "../shared/Input/Input";
-import ButtonBack from "../shared/ButtonBack/ButtonBack";
-import SecureInput from "../shared/SecureInput/SecureInput";
-
-
-import {Feather} from '@expo/vector-icons';
-import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
-
+import Button from "../shared/Button";
+import Input from "../shared/Input";
+import ButtonBack from "../shared/ButtonBack";
 
 export default function SignUp({goBack}) {
     const [isSelected, setSelection] = useState(false);
@@ -18,29 +12,17 @@ export default function SignUp({goBack}) {
         <View style={styles.container}>
             <ButtonBack text='Back' onPress={goBack}/>
             <Text style={styles.textHeader}>Sign up</Text>
-            <View style={styles.inputIconContainer}>
-                <Feather name="user" style={styles.inputIcon}/>
-                <Input placeholder='Your name' placeholderTextColor='#fff' required/>
-            </View>
-            <View style={styles.inputIconContainer}>
-                <MaterialCommunityIcons name="email" style={styles.inputIcon} />
-                <Input placeholder='Email' placeholderTextColor='#fff' required/>
-            </View>
-            <View style={styles.inputIconContainer}>
-                <MaterialCommunityIcons name="phone" style={styles.inputIcon} />
-                <Input placeholder='Phone' placeholderTextColor='#fff' required/>
-            </View>
-            <View style={styles.inputIconContainer}>
-                <Feather name="lock" style={styles.inputIcon}/>
-                <SecureInput placeholder='Password' placeholderTextColor='#fff' required/>
-            </View>
+                <Input placeholder='Your name' iconName ='user' placeholderTextColor='#fff' required/>
+                <Input placeholder='Email' iconName ='email' placeholderTextColor='#fff' required/>
+                <Input placeholder='Phone' iconName ='phone' placeholderTextColor='#fff' required/>
+                <Input placeholder='Password' isSecure iconName ='lock' placeholderTextColor='#fff' required/>
             <View style={styles.checkboxContainer}>
                 <CheckBox
                     value={isSelected}
                     onValueChange={setSelection}
                     style={styles.checkbox}
                 />
-                <Text style={styles.textLink}>Yes ! Agree all Tearms & Condition</Text>
+                <Text style={styles.textLink}>Yes ! Agree all Terms and Conditions</Text>
             </View>
             <Button style={styles.signUpButton} text='Sign up'/>
         </View>
@@ -58,17 +40,6 @@ const styles = StyleSheet.create({
         fontSize: 40,
         textAlign: 'center',
         marginBottom: 25,
-    },
-    inputIcon: {
-        backgroundColor: 'red',
-        position: 'absolute',
-        fontSize: 25,
-        left: 60,
-        top: 7
-    },
-    inputIconContainer: {
-        backgroundColor: 'transparent',
-        color: '#fff',
     },
     checkbox: {
         marginRight: 20,
