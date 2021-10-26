@@ -5,7 +5,7 @@ import Button from "../components/shared/Button/Button";
 import {useDispatch} from "react-redux";
 
 import {addToCart} from "../store/cart/cart-slice";
-import CartButton from "../components/CartButton";
+
 const books = [
     {
         id: '1',
@@ -52,7 +52,6 @@ export default function AllBooks() {
                     renderItem={renderItem}
                     keyExtractor={(item) => item.id}
                 />
-                <CartButton/>
             </View>
         </SafeAreaView>
     );

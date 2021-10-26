@@ -13,7 +13,9 @@ const renderItem = ({ item }) => {
             <Text style={styles.text}>{item.name}</Text>
             <Text style={styles.textAuthor}>{item.author}</Text>
             <Text style={styles.textPrice}>{item.price} UAH</Text>
-            <Button text='remove' type='dark' onPress={item.onPress}/>
+            <View style={styles.button}>
+                <Button text='remove' type='dark' onPress={item.onPress}/>
+            </View>
         </View>
     );
 };
@@ -34,7 +36,7 @@ export default function AllBooks() {
                     renderItem={renderItem}
                     keyExtractor={(item) => item.id}
                 />
-                <Text style={styles.total}>Total:{total}</Text>
+                <Text style={styles.total}>Total: {total} UAH</Text>
             </View>
         </SafeAreaView>
     );
@@ -47,27 +49,38 @@ const styles = StyleSheet.create({
         position:'relative'
     },
     bookContainer:{
-        alignItems: 'center',
         justifyContent: 'center',
-        marginBottom: 20
+        marginBottom: 20,
+        borderBottomColor:"#fff",
+        borderWidth:1
     },
     text:{
-        fontSize: 20,
+        fontSize: 18,
         color: "#fff",
-        paddingBottom:10
+        paddingBottom:10,
+        marginLeft:20,
     },
     textAuthor:{
-        fontSize: 15,
+        fontSize: 16,
         color: "#fff",
-        paddingBottom:10
+        paddingBottom:10,
+        marginLeft:20,
     },
     textPrice:{
         fontSize: 15,
         color: "#fff",
-        paddingBottom:10
+        paddingBottom:10,
+        marginLeft:20,
+    },
+    button:{
+        marginBottom: 20,
+        alignItems:'flex-end',
+        marginRight:20,
+        marginTop: -55
     },
     total:{
-        fontSize: 15,
+        fontSize: 20,
         color: "#fff",
+        textAlign:'center'
     }
 });
