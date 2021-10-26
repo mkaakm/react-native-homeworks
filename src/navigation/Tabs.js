@@ -35,8 +35,8 @@ export default function Tabs() {
                 })
                 }
             >
-                <Tab.Screen name="BookShop" component={BookShop} options={{tabBarLabel: () => null}}/>
                 <Tab.Screen name="Home" component={Home} options={{tabBarLabel: () => null}} />
+                <Tab.Screen name="BookShop" component={BookShop} options={{tabBarLabel: () => null}}/>
                 <Tab.Screen name="AllBooks" component={AllBooks} options={{tabBarBadge: 3, tabBarLabel: () => null}}/>
                 <Tab.Screen name="ListOfBooks" component={ListOfBooksCurrently} options={{tabBarLabel: () => null}}/>
                 <Tab.Screen name="Cart" component={Cart} options={{tabBarLabel: () => null}}/>
