@@ -1,20 +1,21 @@
 import React from 'react';
 import {StyleSheet, Text, View} from 'react-native';
 
-import Button from "../shared/Button";
+import Button from "../../shared/Button";
 
 import {AntDesign} from '@expo/vector-icons';
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
 
 import {COLORS} from "../../color";
-export default function Start({setScreen}) {
+
+export default function Start({setView}) {
     return (
         <View style={styles.container}>
             <View>
                 <Text style={styles.text}>Dark side of <Text style={styles.innerText}>Book store</Text></Text>
                 <View style={styles.buttonContainer}>
-                    <Button text='Login' onPress={() => setScreen('login')}/>
-                    <Button text='SignUp' type='dark' onPress={() => setScreen('signUp')}/>
+                    <Button text='Login' onPress={() => setView('login')}/>
+                    <Button text='SignUp' type='dark' onPress={() => setView('signUp')}/>
                 </View>
                 <Text style={styles.textMedia}>Social <Text style={styles.innerText}>media</Text></Text>
             </View>

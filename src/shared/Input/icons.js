@@ -1,3 +1,4 @@
+import React from "react";
 import {StyleSheet} from 'react-native';
 import {Feather} from '@expo/vector-icons';
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";

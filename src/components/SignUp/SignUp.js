@@ -1,25 +1,27 @@
 import React, {useState} from 'react';
 import {StyleSheet, Text, View, CheckBox} from 'react-native';
 
-import Button from "../shared/Button";
-import Input from "../shared/Input";
-import ButtonBack from "../shared/ButtonBack";
+import Button from "../../shared/Button";
+import Input from "../../shared/Input";
+import ButtonBack from "../../shared/ButtonBack";
+
+import {COLORS} from "../../color";
 
 export default function SignUp({goBack}) {
-    const [isSelected, setSelection] = useState(false);
+    const [agree, setAgree] = useState(false);
 
     return (
         <View style={styles.container}>
             <ButtonBack text='Back' onPress={goBack}/>
             <Text style={styles.textHeader}>Sign up</Text>
-                <Input placeholder='Your name' iconName ='user' placeholderTextColor='#fff' required/>
-                <Input placeholder='Email' iconName ='email' placeholderTextColor='#fff' required/>
-                <Input placeholder='Phone' iconName ='phone' placeholderTextColor='#fff' required/>
-                <Input placeholder='Password' isSecure iconName ='lock' placeholderTextColor='#fff' required/>
+                <Input placeholder='Your name' iconName ='user' placeholderTextColor={COLORS.primary} required/>
+                <Input placeholder='Email' iconName ='email' placeholderTextColor={COLORS.primary} required/>
+                <Input placeholder='Phone' iconName ='phone' placeholderTextColor={COLORS.primary} required/>
+                <Input placeholder='Password' isSecure iconName ='lock' placeholderTextColor={COLORS.primary} required/>
             <View style={styles.checkboxContainer}>
                 <CheckBox
-                    value={isSelected}
-                    onValueChange={setSelection}
+                    value={agree}
+                    onValueChange={setAgree}
                     style={styles.checkbox}
                 />
                 <Text style={styles.textLink}>Yes ! Agree all Terms and Conditions</Text>

@@ -4,9 +4,8 @@ import {NavigationContainer} from '@react-navigation/native';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 
 import Home from "../screens/Home"
-import AllBooks from "../screens/AllBooks";
-import ListOfBooksCurrently from "../screens/ListOfBooksCurrently";
-import BookShop from "../screens/BookShop";
+import Profile from "../screens/Profile";
+import BooksShop from "../screens/BooksShop";
 import Cart from "../screens/Cart";
 
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5'
@@ -14,10 +13,12 @@ import FontAwesome5 from 'react-native-vector-icons/FontAwesome5'
 const Tab = createBottomTabNavigator();
 
 import {iconConfigs} from "./iconsConfigs";
+
 export default function Tabs() {
     return (
         <NavigationContainer>
             <Tab.Navigator
+                tabBarOptions={{showLabel: false}}
                 screenOptions={({route}) => ({
                     headerStyle: {backgroundColor: '#000'},
                     headerTintColor: 'red',
@@ -35,11 +36,10 @@ export default function Tabs() {
                 })
                 }
             >
-                <Tab.Screen name="Home" component={Home} options={{tabBarLabel: () => null}} />
-                <Tab.Screen name="BookShop" component={BookShop} options={{tabBarLabel: () => null}}/>
-                <Tab.Screen name="AllBooks" component={AllBooks} options={{tabBarBadge: 3, tabBarLabel: () => null}}/>
-                <Tab.Screen name="ListOfBooks" component={ListOfBooksCurrently} options={{tabBarLabel: () => null}}/>
-                <Tab.Screen name="Cart" component={Cart} options={{tabBarLabel: () => null}}/>
+                <Tab.Screen name="Home" component={Home}/>
+                <Tab.Screen name="Profile" component={Profile}/>
+                <Tab.Screen name="BookShop" component={BooksShop}/>
+                <Tab.Screen name="Cart" component={Cart}/>
             </Tab.Navigator>
         </NavigationContainer>
     );

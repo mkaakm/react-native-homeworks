@@ -1,19 +1,17 @@
 import React from 'react';
+
 import {
     StyleSheet,
     Text,
     View,
 } from 'react-native';
 
-import Button from "../shared/Button/Button";
-import ButtonBack from "../shared/ButtonBack/ButtonBack";
-import Input from "../shared/Input/Input";
-import SecureInput from "../shared/SecureInput/SecureInput";
-
-import { Feather } from '@expo/vector-icons';
-import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
+import Button from "../../shared/Button/Button";
+import ButtonBack from "../../shared/ButtonBack/ButtonBack";
+import Input from "../../shared/Input/Input";
 
 import {COLORS} from "../../color";
+
 export default function Login({goBack}) {
 
     return (
@@ -21,14 +19,8 @@ export default function Login({goBack}) {
             <ButtonBack text='Back' onPress={goBack}/>
             <View>
                <Text style={styles.textHeader}>Login</Text>
-                <View style={styles.inputIconContainer}>
-                    <MaterialCommunityIcons name="email" style={styles.inputIcon}/>
-                    <Input placeholder='Email' placeholderTextColor='#fff' required/>
-                </View>
-                <View style={styles.inputIconContainer}>
-                    <Feather name="lock" style={styles.inputIcon}/>
-                <SecureInput placeholder='Password' placeholderTextColor='#fff' required/>
-                </View>
+                <Input placeholder='Email' iconName ='email' placeholderTextColor={COLORS.primary} required/>
+                <Input placeholder='Password' isSecure iconName ='lock' placeholderTextColor={COLORS.primary} required/>
                 <Button style={styles.loginButton} text='Login'/>
                 <Text style={styles.textLink}>Forget your password?</Text>
                 <Text style={styles.text}>Dont have an account? <Text style={styles.textLink}>Sign up</Text></Text>

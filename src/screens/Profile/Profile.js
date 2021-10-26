@@ -1,5 +1,5 @@
 import React from "react";
-import {useQuery} from "@apollo/client";
+
 import {
     View,
     StyleSheet,
@@ -10,10 +10,14 @@ import {
     Image,
 } from "react-native";
 
-import UserInfo from "../UserInfo/UserInfo";
-import UserActivity from "../UserActivity/UserActivity";
-import {COLORS} from "../../color";
+import {useQuery} from "@apollo/client";
+
+import UserInfo from "../../components/UserInfo/UserInfo";
+import UserActivity from "../../components/UserActivity/UserActivity";
+
 import {getUser, getGallery} from "./queries";
+
+import {COLORS} from "../../color";
 
 export default function Profile() {
     const {data, error, loading} = useQuery(getUser);
@@ -79,6 +83,6 @@ export default function Profile() {
             color: COLORS.primary
         },
         loading: {
-            color: "#fff",
+            color: COLORS.primary,
         }
     })

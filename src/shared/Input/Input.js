@@ -1,20 +1,22 @@
 import React, {useState} from "react";
 import {StyleSheet,TextInput, View, Text} from 'react-native';
 
-import {icons} from "./icons";
 import {Feather} from '@expo/vector-icons';
+
+import {icons} from "./icons";
+import {COLORS} from "../../color";
 
 export default function Input(props) {
   const {
     placeholder,
-    keyboardType,
-    value,
-    placeholderTextColor,
-    required = false,
-    iconName,
-    isSecure = false,
+      keyboardType,
+      value,
+      placeholderTextColor,
+      required = false,
+      iconName,
+      isSecure = false,
   } = props;
-  const [secure, setSecure] = useState(true);
+  const [secure, setSecure] = useState(isSecure);
   const [text, setText] = useState(null);
   const [error, setError] = useState(null);
   const endEdit = (e) => {
@@ -26,6 +28,7 @@ export default function Input(props) {
   const switchSecure = () => {
     setSecure((prevState) => !prevState);
   };
+  const secureIcon = secure ? "eye-off" : "eye";
   return (
     <View style={styles.inputIconContainer}>
       {iconName && icons[iconName]}
@@ -35,14 +38,11 @@ export default function Input(props) {
         placeholderTextColor={placeholderTextColor}
         keyboardType={keyboardType}
         value={value}
+        secureTextEntry={secure}
         onEndEditing={endEdit}
       />
       {error && <Text>{error}</Text>}
-      {isSecure && secure ? (
-        <Feather name="eye" style={styles.secureIcon} onPress={switchSecure} />
-      ) : (
-        <Feather name="eye-off" style={styles.secureIcon} onPress={switchSecure} />
-      )}
+      {isSecure && <Feather name={secureIcon} style={styles.secureIcon} onPress={switchSecure} />}
     </View>
   );
 }
@@ -50,12 +50,12 @@ export default function Input(props) {
 const styles = StyleSheet.create({
     inputIconContainer: {
         backgroundColor: 'transparent',
-        color: '#fff',
+        color: COLORS.primary,
     },
     input:{
         height: 40,
         padding: 10,
-        color: "#fff",
+        color: COLORS.primary,
         borderColor: 'red',
         borderRadius: 25,
         backgroundColor: 'transparent',
@@ -68,7 +68,7 @@ const styles = StyleSheet.create({
         marginLeft: 'auto',
         marginBottom: 25,
         width: '80%',
-        shadowColor:"red",
+        shadowColor:COLORS.secondary,
         shadowOffset:{
             width: 2,
             height: 2
@@ -79,7 +79,7 @@ const styles = StyleSheet.create({
     },
     text:{
         fontSize: 14,
-        color: 'red',
+        color: COLORS.secondary,
         width: '80%',
         marginRight: 'auto',
         marginLeft: 'auto',
@@ -87,7 +87,7 @@ const styles = StyleSheet.create({
         top: -15
     },
     secureIcon:{
-        color:'red',
+        color:COLORS.secondary,
         position: 'absolute',
         right: '15%',
         top: 7,

@@ -1,11 +1,14 @@
 import React from "react";
 
-import {Text, View, StyleSheet, FlatList, SafeAreaView} from 'react-native';
-import Button from "../components/shared/Button/Button";
 import {useDispatch, useSelector} from "react-redux";
+import {Text, View, StyleSheet, FlatList, SafeAreaView} from 'react-native';
+
+import Button from "../shared/Button/Button";
 
 import { removeFromCart} from "../store/cart/cart-slice";
 import {getCart} from '../store/cart/cart-selectors'
+
+import {COLORS} from "../color";
 
 const renderItem = ({ item }) => {
     return (
@@ -51,24 +54,24 @@ const styles = StyleSheet.create({
     bookContainer:{
         justifyContent: 'center',
         marginBottom: 20,
-        borderBottomColor:"#fff",
+        borderBottomColor:COLORS.primary,
         borderWidth:1
     },
     text:{
         fontSize: 18,
-        color: "#fff",
+        color: COLORS.primary,
         paddingBottom:10,
         marginLeft:20,
     },
     textAuthor:{
         fontSize: 16,
-        color: "#fff",
+        color: COLORS.primary,
         paddingBottom:10,
         marginLeft:20,
     },
     textPrice:{
         fontSize: 15,
-        color: "#fff",
+        color: COLORS.primary,
         paddingBottom:10,
         marginLeft:20,
     },
@@ -80,7 +83,7 @@ const styles = StyleSheet.create({
     },
     total:{
         fontSize: 20,
-        color: "#fff",
+        color: COLORS.primary,
         textAlign:'center'
     }
 });

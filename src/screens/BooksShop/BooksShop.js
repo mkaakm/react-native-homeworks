@@ -1,31 +1,16 @@
 import React from "react";
 
 import {Text, View, StyleSheet, FlatList, SafeAreaView} from 'react-native';
-import Button from "../components/shared/Button/Button";
+
+import Button from "../../shared/Button/Button";
+
 import {useDispatch} from "react-redux";
 
-import {addToCart} from "../store/cart/cart-slice";
+import {addToCart} from "../../store/cart/cart-slice";
 
-const books = [
-    {
-        id: '1',
-        name: 'Тьма, что приходит прежде',
-        author: 'Скотт Беккер',
-        price: 200
-    },
-    {
-        id: '2',
-        name: 'Воин кровавых времен',
-        author: 'Скотт Беккер',
-        price: 300
-    },
-    {
-        id: '3',
-        name: 'Нечистивый консульт',
-        author: 'Скотт Беккер',
-        price: 400
-    }
-]
+import {COLORS} from "../../color";
+
+import {books} from "./books"
 
 const renderItem = ({ item }) => {
     return (
@@ -70,17 +55,17 @@ const styles = StyleSheet.create({
     },
     text:{
         fontSize: 20,
-        color: "#fff",
+        color: COLORS.primary,
         paddingBottom:10
     },
     textAuthor:{
         fontSize: 15,
-        color: "#fff",
+        color: COLORS.primary,
         paddingBottom:10
     },
     textPrice:{
         fontSize: 15,
-        color: "#fff",
+        color: COLORS.primary,
         paddingBottom:10
     }
 });

@@ -1,21 +1,23 @@
 import React, {useState} from 'react';
 
-import { StyleSheet, View,  } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 
 import { StatusBar } from 'expo-status-bar';
 
-import Start from "../components/start/start";
-import Login from "../components/Login/Login";
-import SignUp from "../components/SignUp/SignUp";
+import Start from "../components/Start";
+import Login from "../components/Login";
+import SignUp from "../components/SignUp";
+
+import {COLORS} from "../color";
 
 export default function Home () {
-    const [screen, setScreen] = useState('start')
-    const goBack = ()=> setScreen('start')
+    const [view, setView] = useState('start')
+    const goBack = ()=> setView('start')
     return (
         <View style={styles.container}>
-            {screen === 'start' && <Start setScreen={setScreen}/> }
-            {screen === 'login' && <Login goBack={goBack}/>}
-            {screen === 'signUp' && <SignUp goBack={goBack}/>}
+            {view === 'start' && <Start setView={setView}/> }
+            {view === 'login' && <Login goBack={goBack}/>}
+            {view === 'signUp' && <SignUp goBack={goBack}/>}
             <StatusBar style="auto" />
         </View>
     )
@@ -23,7 +25,7 @@ export default function Home () {
 
 const styles = StyleSheet.create({
     container: {
-        backgroundColor: '#fff',
+        backgroundColor: COLORS.primary,
         height: '100%',
     },
 });

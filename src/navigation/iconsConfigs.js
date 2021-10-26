@@ -2,11 +2,8 @@ export const iconConfigs = {
     'Home':{
         iconName: 'home',
     },
-    'AllBooks':{
-        iconName: 'book',
-    },
-    'ListOfBooks':{
-        iconName: 'bookmark',
+    'Profile':{
+        iconName: 'user',
     },
     'BookShop':{
         iconName: 'book',

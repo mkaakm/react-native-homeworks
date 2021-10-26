@@ -10,7 +10,7 @@ import {
   StatusBar,
 } from "react-native";
 import Animated from "react-native-reanimated";
-import Button from "../shared/Button/Button";
+import Button from "../../shared/Button/Button";
 
 const baseUrl = "https://randomuser.me/api/?seed=lol&inc=picture,name";
 

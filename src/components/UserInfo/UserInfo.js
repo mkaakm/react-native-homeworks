@@ -1,8 +1,9 @@
 import React from 'react';
 import {SafeAreaView, View, FlatList, StyleSheet, Text} from 'react-native';
-import {icons} from './Icons'
 
+import {icons} from './Icons'
 import {COLORS} from "../../color";
+
 const Item = ({title, icon}) => (
     <View style={styles.item}>
         <Text style={styles.icon}>{icon}</Text>

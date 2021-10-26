@@ -2,6 +2,8 @@ import React from 'react';
 
 import {SafeAreaView, View, FlatList, StyleSheet, Text} from 'react-native';
 
+import {COLORS} from "../../color";
+
 const Item = ({ title, count }) => (
     <View style={styles.item}>
         <Text style={styles.title}>{title}</Text>
@@ -14,6 +16,7 @@ export default function  UserActivity ({activity}) {
     const renderItem = ( {item} ) => {
         return  <Item title={item.title} count={item.description}/>
     }
+
     return (
         <SafeAreaView style={styles.container}>
             {activity?.items && <FlatList
