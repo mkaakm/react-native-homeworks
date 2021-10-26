@@ -22,6 +22,7 @@ export default function  UserActivity ({activity}) {
                 keyExtractor={item => item.itemId}
                 numColumns={3}
             />}
+            {!activity && <Text>No activity items</Text>}
         </SafeAreaView>
     );
 }
