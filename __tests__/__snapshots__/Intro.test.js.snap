@@ -1,4 +1,6 @@
-exports[`Intro renders correctly 1`] = `
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
 <View
   style={
     Object {
@@ -7,7 +9,8 @@ exports[`Intro renders correctly 1`] = `
       "flex": 1,
       "justifyContent": "center",
     }
-  }>
+  }
+>
   <Text
     style={
       Object {
@@ -15,7 +18,8 @@ exports[`Intro renders correctly 1`] = `
         "margin": 10,
         "textAlign": "center",
       }
-    }>
+    }
+  >
     Welcome to React Native!
   </Text>
   <Text
@@ -25,7 +29,8 @@ exports[`Intro renders correctly 1`] = `
         "marginBottom": 5,
         "textAlign": "center",
       }
-    }>
+    }
+  >
     This is a React Native snapshot test.
   </Text>
 </View>
