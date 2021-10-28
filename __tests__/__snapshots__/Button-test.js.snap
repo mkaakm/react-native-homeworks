@@ -1,0 +1,29 @@
+exports[`Button renders correctly 1`] = `
+        <View
+            style={
+                Object {
+                 "color": "#000",
+                 "borderColor": COLORS.primary,
+                 "borderRadius": 25,
+                 "backgroundColor": COLORS.primary,
+                 "textAlign":"center",
+                 "borderStyle":"solid",
+                 "borderWidth": 1,
+                 "width": 100,
+                 "paddingVertical":10
+                }
+            }
+        }>
+            <TouchableOpacity onPress={onPress}>
+                <Text
+                    style={
+                        Object {
+                            "textAlign":"center",
+                        }
+                    }
+                >
+                {text}
+                </Text>
+            </TouchableOpacity>
+        </View>
+`
