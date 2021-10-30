@@ -12,7 +12,7 @@ export default function SignUp({goBack}) {
 
     return (
         <View style={styles.container}>
-            <ButtonBack text='Back' onPress={goBack}/>
+            <ButtonBack onPress={goBack}/>
             <Text style={styles.textHeader}>Sign up</Text>
                 <Input placeholder='Your name' iconName ='user' placeholderTextColor={COLORS.primary} required/>
                 <Input placeholder='Email' iconName ='email' placeholderTextColor={COLORS.primary} required/>
